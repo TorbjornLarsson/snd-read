@@ -1,0 +1,6 @@
+{% set dlist = distribution %}
+{#- Avlägsna whitespace före och efter kommentarer [!] och utskrifter -#}
+{%- for d in dlist -%}
+{%- set list1 = distribution[loop.index0].name.split('/') -%}
+{{list1[1]}}, {{distribution[loop.index0].contentUrl}}
+{% endfor %}

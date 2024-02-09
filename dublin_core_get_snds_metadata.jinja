@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dublin_core schema="dc">
+<dcvalue element="contributor" qualifier="author">{{creator.0.name}}</dcvalue>
+<dcvalue element="date" qualifier="issued">{{datePublished}}</dcvalue>
+<dcvalue element="identifier" qualifier="uri">{{id}}</dcvalue>
+<dcvalue element="identifier" qualifier="govdoc">{{identifier[-1].value}}</dcvalue>
+<dcvalue element="description" qualifier="sponsorship" language="sv_SE">{{sourceOrganization.1.value}}</dcvalue>
+<dcvalue element="language" qualifier="iso" language="sv_SE">sv_SE</dcvalue>
+<dcvalue element="publisher" qualifier="none" language="sv_SE">{{publisher.name.1.value}}</dcvalue>
+<dcvalue element="subject" qualifier="none" language="sv_SE">{{keywords.1.value}}</dcvalue>
+<dcvalue element="title" qualifier="none" language="sv_SE">{{name.1.value}}</dcvalue>
+{% set dlist = distribution %}
+{#- Avlägsna whitespace före och efter kommentarer [!] och utskrifter -#}
+{%- for d in dlist -%}
+{%- set list1 = distribution[loop.index0].name.split('/') -%}
+<dcvalue element="description" qualifier="none" language="sv_SE">{{list1[1]}}</dcvalue>
+{% endfor %}
+<dcvalue element="description" qualifier="none" language="sv_SV">{{description.1.value}}</dcvalue>
+<dcvalue element="description" qualifier="sponsorship" language="en_EN">{{sourceOrganization.0.value}}</dcvalue>
+<dcvalue element="language" qualifier="iso" language="en_EN">en_EN</dcvalue>
+<dcvalue element="publisher" qualifier="none" language="en_EN">{{publisher.name.0.value}}</dcvalue>
+<dcvalue element="subject" qualifier="none" language="en_EN">{{keywords.0.value}}</dcvalue>
+<dcvalue element="title" qualifier="none" language="en_EN">{{name.0.value}}</dcvalue>
+{% set dlist = distribution %}
+{#- Avlägsna whitespace före och efter kommentarer [!] och utskrifter -#}
+{%- for d in dlist -%}
+{%- set list1 = distribution[loop.index0].name.split('/') -%}
+<dcvalue element="description" qualifier="none" language="en_EN">{{list1[1]}}</dcvalue>
+{% endfor %}
+<dcvalue element="description" qualifier="none" language="en_EN">{{description.0.value}}</dcvalue>
+<dcvalue element="type" qualifier="none" language="sv_SE">Dataset</dcvalue>
+</dublin_core>
